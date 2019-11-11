@@ -1,0 +1,18 @@
+{
+  "name": "function-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "azure-iot-device": "^1.12.0",
+    "azure-iot-device-mqtt": "^1.11.0",
+    "azure-iot-provisioning-device-mqtt": "^1.6.0",
+    "azure-iot-security-symmetric-key": "^1.6.0"
+  }
+}

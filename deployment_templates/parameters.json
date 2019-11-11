@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_appfunction_name": {
+            "value": null
+        },
+        "IotHubs_iothubresource_name": {
+            "value": null
+        },
+        "serverfarms_appservice_serverfarm_name": {
+            "value": null
+        },
+        "components_app_insights_name": {
+            "value": null
+        },
+        "databaseAccounts_cosmos_db_acc_name": {
+            "value": null
+        },
+        "IoTApps_iotcentralapp_name": {
+            "value": null
+        },
+        "storageAccounts_storageaccount_name": {
+            "value": null
+        }
+    }
+}
