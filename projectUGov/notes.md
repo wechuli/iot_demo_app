@@ -29,6 +29,28 @@ This is perhaps the simplest and works for most situations. Below is an architec
 
 - Simple and inexpensive since less components are used
 
+#### Cons
+
+- The Azure Function is doing too much, there is no clear separation of concerns
+
 ### Approach 2
 
 The second approach is to decouple some of the logic done by the master function to Stream Analytics through an intermediate event Hub. The architecture is provided below:
+
+![](assets/arch2.PNG)
+
+#### Pros
+
+- Separation of concerns provides room for extensibility since each piece is doing a clearly defined task. The function's only work is formatting the data appropriately and loading it to the Event Hub for additional action by Stream Analytics.
+- Suitable if one wants to treat telemetry as batches (e.g. the past hour) rather than single independent events
+
+## Common Steps
+
+To deploy both the proposed architecture follow the following steps. A little Azure knowledge is assumed.
+
+1. Create a new resource group you will use for the project.
+2. Create an IoT Hub (S1 tier is good enough)
+3. Provision two devices in the IoT Hub
+4. Create a Function App with JavaScript Runtime (Node v12 +)
+5. Create an Event Hub Namespace and add two Event Hubs, `raw` and `processes`, add a consumer group in each of the EventHubs
+6. Create a CosmosDB Account, we will not be creating the SQL DB
